@@ -11,7 +11,7 @@ body {
 .tasks {
   padding: 20px;
   border-bottom: 1px solid #222; }
-  .tasks h1 {
+  .tasks h1, .tasks h3 {
     color: #222;
     margin: 10px 0; }
   .tasks input[type=button] {
@@ -92,6 +92,25 @@ body {
         -o-transform: scaleY(1);
         -ms-transform: scaleY(1);
         transform: scaleY(1); }
+  .tasks .pane {
+    border-radius: 4px;
+    position: relative;
+    background-color: #BDC3C7;
+    padding: 15px; }
+    .tasks .pane .remove-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: none;
+      color: #D91E18;
+      outline: none;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      cursor: pointer; }
+      .tasks .pane .remove-button:hover {
+        color: #CF000F; }
 
 .disabled {
   display: none; }
