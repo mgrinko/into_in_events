@@ -60,3 +60,74 @@ document.querySelector('.prev').addEventListener('click', function () {
     carouselUl.style.marginLeft = margin + 'px';
     console.log(margin);
 });
+
+/** Передвигать мяч по полю */
+let field = document.querySelector('#field'),
+    ball = document.querySelector('#ball');
+
+field.addEventListener('click', function (event) {
+    let y, x;
+    if (event.offsetX + ball.offsetWidth / 2 > field.clientWidth) {
+        x = field.clientWidth - ball.offsetWidth;
+    } else if (event.offsetX - ball.offsetWidth / 2 < 0) {
+        x = 0;
+    } else {
+        x = event.offsetX - ball.offsetWidth / 2;
+    }
+    if (event.offsetY + ball.offsetHeight / 2 > field.clientHeight) {
+        y = field.clientHeight - ball.offsetHeight;
+    } else if (event.offsetY - ball.offsetHeight / 2 < 0) {
+        y = 0;
+    } else {
+        y = event.offsetY - ball.offsetHeight / 2;
+    }
+    ball.style.top = y + 'px';
+    ball.style.left = x + 'px';
+});
+
+/** Скрытие сообщения с помощью делегирования */
+let allPane1Blocks = document.querySelectorAll('.pane1');
+for (let i = 0; i < allPane1Blocks.length; i++) {
+    let removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-button');
+    removeBtn.textContent = '[X]';
+    allPane1Blocks[i].appendChild(removeBtn);
+}
+
+let mainBlock = document.querySelector('#target-click');
+mainBlock.addEventListener('click', function (event) {
+    let target = event.target;
+    if (target.classList.contains('remove-button')) {
+        target.parentNode.classList.add('disabled');
+    }
+});
+
+/** Раскрывающееся дерево */
+let treeBlock = document.querySelector('.tree');
+treeBlock.addEventListener('click', function (event) {
+    let target = event.target;
+    if (target.tagName == 'SPAN' && target.nextElementSibling) {
+        target.nextElementSibling.classList.toggle('disabled');
+    }
+});
+
+/** Поведение "подсказка" */
+document.addEventListener('mouseover', function (event) {
+    let target = event.target;
+    if (target.classList.contains('show-tooltip')) {
+        let tooltip = document.createElement('div');
+        tooltip.classList.add('tooltip');
+        tooltip.innerHTML = target.getAttribute('data-tooltip');
+        document.body.appendChild(tooltip);
+        let coords = target.getBoundingClientRect();
+        console.log(coords);
+        let top = coords.top + target.offsetHeight;
+        tooltip.style.top = top + 'px';
+    }
+});
+// document.addEventListener('mouseout', function (event) {
+//     let target = event.target;
+//     if (target.classList.contains('show-tooltip')) {
+//         document.querySelector('.tooltip').remove();
+//     }
+// });
