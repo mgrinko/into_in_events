@@ -35,6 +35,9 @@ body {
   }
   p {
     margin: 5px;
+    &.alert{
+      color: #D91E18;
+    }
   }
   ul {
     width: 252px;

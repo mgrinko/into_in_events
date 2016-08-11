@@ -60,6 +60,3 @@ document.querySelector('.prev').addEventListener('click', function () {
     carouselUl.style.marginLeft = margin + 'px';
     console.log(margin);
 });
-// Сделал по-своему и потом посмотрел решение.
-// Видно с Math не совсем разобрался так как не понял ка кон тут работает.
-// Плюс как выяснилось у меня решение на универсальное и подходит именно под это кол-во картинок.
