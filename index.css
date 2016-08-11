@@ -111,8 +111,50 @@ body {
       cursor: pointer; }
       .tasks .pane .remove-button:hover {
         color: #CF000F; }
+  .tasks .wrapper {
+    background: #BE90D4;
+    padding: 10px 30px;
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 0 0 30px; }
+    .tasks .wrapper .carousel {
+      padding: 0;
+      margin: 0;
+      overflow: hidden; }
+      .tasks .wrapper .carousel ul {
+        -webkit-transition: margin-left 0.4s;
+        -moz-transition: margin-left 0.4s;
+        -ms-transition: margin-left 0.4s;
+        -o-transition: margin-left 0.4s;
+        transition: margin-left 0.4s; }
+        .tasks .wrapper .carousel ul li {
+          display: inline-block; }
+    .tasks .wrapper .arrow {
+      position: absolute;
+      display: block;
+      line-height: 24px;
+      width: 24px;
+      text-align: center;
+      font-size: 16px;
+      top: 50%;
+      cursor: pointer;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      background: #8E44AD;
+      color: #f4f4f4; }
+      .tasks .wrapper .arrow.prev {
+        left: 5px; }
+      .tasks .wrapper .arrow.next {
+        right: 5px; }
 
 .disabled {
   display: none; }
 
-/*# sourceMappingURL=index1.css.mapp */
+/*# sourceMappingURL=index.css.map */
